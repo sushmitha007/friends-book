@@ -37,24 +37,4 @@ jobs:
         - ~/.m2
         key: v1-dependencies-{{ checksum "pom.xml" }}
 
-  deploy:
-    docker:
-    - image: buildpack-deps:trusty
-    steps:
-    - checkout
-    - run:
-        name: Deploy Master to Heroku
-        command: |
-          git push https://heroku:6820734f-f5a6-4e9e-9e63-e9ecdb0e8a3a@git.heroku.com/friendsBook.git master
-
-workflows:
-  version: 2
-  build-deploy:
-    jobs:
-    - build
-    - deploy:
-        requires:
-        - build
-        filters:
-          branches:
-            only: master
+  
