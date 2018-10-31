@@ -45,7 +45,7 @@ jobs:
     - run:
         name: Deploy Master to Heroku
         command: |
-          git push heroku master
+          git push ://heroku:6820734f-f5a6-4e9e-9e63-e9ecdb0e8a3a@git.heroku.com/friendsBook.git master
 
 workflows:
   version: 2
